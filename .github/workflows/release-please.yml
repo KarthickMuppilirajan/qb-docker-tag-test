@@ -6,7 +6,7 @@ env:
     ECS_SERVICE: Bonjour-FargateServiceECC8084D-xUJ8DKJSx5ZU
     ECS_CLUSTER: Bonjour-ClusterEB0386A7-uLW6Mq32IKTd
     ECS_TASK_DEFINITION: qb-ecs-task.json
-    CONTAINER_NAME: 'qb-container' 
+    CONTAINER_NAME: 'web' 
 
 on:
     push:

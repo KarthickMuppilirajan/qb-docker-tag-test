@@ -52,7 +52,7 @@
         "dockerLabels": null,
         "systemControls": null,
         "privileged": null,
-        "name": "qb-container"
+        "name": "webr"
       }
     ],
     "placementConstraints": [],
