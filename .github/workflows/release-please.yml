@@ -3,8 +3,8 @@ name: Nodejs script
 env:
     AWS_REGION: us-east-1
     ECR_REPOSITORY: qb-repo
-    ECS_SERVICE: Bonjour-FargateServiceECC8084D-suxtlvLjx7WX
-    ECS_CLUSTER: Bonjour-ClusterEB0386A7-UvrqC1NcuvX4
+    ECS_SERVICE: Bonjour-FargateServiceECC8084D-xUJ8DKJSx5ZU
+    ECS_CLUSTER: Bonjour-ClusterEB0386A7-uLW6Mq32IKTd
     ECS_TASK_DEFINITION: qb-ecs-task.json
     CONTAINER_NAME: 'qb-container' 
 
