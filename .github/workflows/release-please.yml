@@ -21,7 +21,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Release-Please
-        run: npx release-please release-pr --repo-url=https://github.com/KarthickMuppilirajan/qb-docker-tag-test
+      - name: Build
+        run: npm run build
+
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.run_number }}
+          release_name: Release ${{ github.run_number }} 
+       
+          
