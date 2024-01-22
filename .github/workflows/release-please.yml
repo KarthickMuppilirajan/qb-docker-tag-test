@@ -42,7 +42,7 @@ jobs:
     
       - name: Docker build and tag
         run: |
-            docker build -t your-docker-image-name:${{github.run_number}} .
-            docker push your-docker-image-name:${{ github.run_number}}
+            docker build -t karthickmuppilirajan/dockertag:${{github.run_number}} .
+            docker push karthickmuppilirajan/dockertag:${{ github.run_number}}
        
           
