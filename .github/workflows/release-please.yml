@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     branches:
-      - main
+      - release-please--branches--main--components--qbfrontend
 
 jobs:
   release-please:
@@ -40,16 +40,16 @@ jobs:
              username: ${{ secrets.DOCKERHUB_USERNAME }}
              password: ${{ secrets.DOCKERHUB_TOKEN }}
       
-      - name: Extract PR number
-        id: extract_pr_number
-        run: echo "::set-output name=pr_number::$(echo $GITHUB_REF | awk -F/ '{print $3}')"
+      # - name: Extract PR number
+      #   id: extract_pr_number
+      #   run: echo "::set-output name=pr_number::$(echo $GITHUB_REF | awk -F/ '{print $3}')"
     
       - name: Docker build and tag
         run: |
-           docker build -t karthickmuppilirajan/dockertag:${{ github.run_number }} -t karthickmuppilirajan/dockertag:pr${{ steps.extract_pr_number.outputs.pr_number }} .
-           docker push karthickmuppilirajan/dockertag:${{ github.run_number }}
-           docker push karthickmuppilirajan/dockertag:pr${{ steps.extract_pr_number.outputs.pr_number }}
-            # docker build -t karthickmuppilirajan/dockertag:${{github.run_number}} .
-            # docker push karthickmuppilirajan/dockertag:${{ github.run_number}}
+          #  docker build -t karthickmuppilirajan/dockertag:${{ github.run_number }} -t karthickmuppilirajan/dockertag:pr${{ steps.extract_pr_number.outputs.pr_number }} .
+          #  docker push karthickmuppilirajan/dockertag:${{ github.run_number }}
+          #  docker push karthickmuppilirajan/dockertag:pr${{ steps.extract_pr_number.outputs.pr_number }}
+          docker build -t karthickmuppilirajan/dockertag:${{github.run_number}} .
+          docker push karthickmuppilirajan/dockertag:${{ github.run_number}}
        
           
